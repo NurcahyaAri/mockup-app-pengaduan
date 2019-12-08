@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
+        <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <title>Pengaduan</title>
+
+    <style>
+        html {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        .card-pengaduan {
+            font-size: small;
+            border: none;
+            margin: 25px 5px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px 0px #e7e4e4;
+        }
+
+        .navbar {
+            box-shadow: none;
+        }
+
+        .card-navbar {
+            padding: 10px;
+            height: max-content;
+            background: #ff1f64;
+            color: white;
+        }
+
+        .card-navbar p {
+            margin: 0;
+        }
+
+        .card-form-pengaduan {
+            border: none;
+            border-radius: 0px;
+            margin: 10px 0px;
+            box-shadow: 1px 0px 3px 0px #e7e4e4;
+        }
+
+        .form-group {
+            margin: 0;
+        }
+
+        .bmd-label-floating {
+            font-size: 10pt !important;
+        }
+
+        .header-form {
+            margin-top: 30px;
+        }
+
+        ul {
+            margin-left: -40px !important;
+        }
+
+        li {
+            list-style-type: none;
+            margin-top: 5px !important;
+        }
+
+        .icon-success {
+            color: #2ed84f;
+        }
+    </style>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/id.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    
+    <!-- datetimepicker -->
+    <link rel="stylesheet" href="/assets/plugins/material-datepicker/css/bootstrap-material-datetimepicker.css">
+    <script src="/assets/plugins/material-datepicker/js/bootstrap-material-datetimepicker.js"></script>
+</head>
+
+<body>
+    <!-- As a heading -->
+    <div class="container-fluid">
+        <div class="card card-pengaduan">
+            <nav class="navbar navbar-light bg-light card-navbar">
+                <span class="navbar-brand mb-0 h1">Pengaduan Masyarakat</span>
+                <span class="navbar-text">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cekPengaduan">
+                        Lacak pengaduan <i class="fas fa-search"></i>
+                    </button>
+                </span>
+            </nav>
+            <div class="card-body">
+                <div class="row">
+                    <div class=" col-lg-4 col-md-12 col-xs-12 col-sm-12">
+                        <div class="card card-form-pengaduan">
+                            <img src="assets/img/banner.jpg" alt="banner pengaduan" width="100%">
+                            <div class="card-body">
+                                <div class="container">
+                                    <p>Syarat dan Ketentuan</p>
+                                    <p>Bentuk-bentuk yang bisa anda laporkan : </p>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Perbuatan melawan hukum, memperkaya diri orang/badan lain yang merugikan
+                                            keuangan/perekonomian negara
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Menyalahgunakan kewenangan karena jabatan/kedudukan yang dapat merugikan
+                                            keuangan/perekonomian negara
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Penggelapan dalam jabatan
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Pemerasan dalam jabatan
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Tindak pidana yang berkaitan dengan pemborongan
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Delik gratifikasi
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Penggelapan dalam jabatan
+                                        </li>
+                                    </ul>
+                                    <p>Kami Tidak menindaklanjuti : </p>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Pengaduan yang tidak mencantumkan identitas yang lengkap (anonim).
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle icon-success"></i>
+                                            Pengaduan mengenai dugaan terjadinya suatu tindak pidana
+                                        </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-xs-12 col-sm-12">
+                        <div class="card card-form-pengaduan">
+                            <nav class="navbar card-navbar">
+                                <p class="">Formulir pengaduan Perkara</p>
+                            </nav>
+                            <div class="card-body">
+                                <div class="container">
+                                    <form action="">
+                                        <div class="h5 header-form">Data Pelapor</div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Nama
+                                                Lengkap</label>
+                                            <input type="text" class="form-control" id="nama">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">No KTP</label>
+                                            <input type="text" class="form-control" id="no_ktp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Alamat Sesua
+                                                KTP</label>
+                                            <input type="text" class="form-control" id="alamat">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Email</label>
+                                            <input type="text" class="form-control" id="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">No HP</label>
+                                            <input type="text" class="form-control" id="phone_number">
+                                        </div>
+                                        <div class="form-group" style="margin-top: 20px;">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Foto KTP</label>
+                                            <input type="file" class="form-control form-control-file" id="photo_kpt">
+                                        </div>
+
+                                        <div class="h5 header-form">Data Pengaduan</div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Subjek
+                                                Pengaduan</label>
+                                            <input type="text" class="form-control" id="subjek">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Lokasi
+                                                Kejadian</label>
+                                            <input type="text" class="form-control" id="lokasi_kejadian">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Waktu
+                                                Kejadian</label>
+                                            <div>
+                                                <input type="text" class="form-control" id="waktu_kejadian" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Isi
+                                                Pengaduan</label>
+                                            <textarea class="form-control" id="isi_pengaduan" rows="15"></textarea>
+                                        </div>
+                                        <div class="form-group" style="margin-top: 20px;">
+                                            <label for="exampleInputEmail1" class="bmd-label-floating">Dokumen
+                                                Pendukung</label>
+                                            <input type="file" class="form-control form-control-file"
+                                                id="dokumen_pendukung">
+                                        </div>
+                                        <button type="submit" class="btn btn-success" style="margin-top: 45px;">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal lacak pengaduan -->
+    <div class="modal fade" id="cekPengaduan" tabindex="-1" role="dialog" aria-labelledby="cekPengaduanLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cekPengaduanLabel">Form Lacak pengaduan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Masukkan kode registrasi Pengaduan di sini. Jika Anda lupa kode tersebut, cek kembali email Anda. Kode Registrasi kami kirimkan setelah Anda berhasil mengirim laporan pengaduan</p>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="bmd-label-floating">Kode Registrasi</label>
+                            <input type="text" class="form-control" id="kode_registrasi" >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Lacak pengaduan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('body').bootstrapMaterialDesign();
+            $('#waktu_kejadian').bootstrapMaterialDatePicker({format: 'D/MMMM/YYYY',time: false});
+
+        });
+    </script>
+
+</body>
+
+</html>
